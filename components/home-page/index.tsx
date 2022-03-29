@@ -1,4 +1,4 @@
-export default function HomePage(props: Any){
+export default function HomePage(){
   return(
     <div>
       text
