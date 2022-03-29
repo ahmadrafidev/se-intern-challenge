@@ -5,10 +5,10 @@ const Home: NextPage = () => {
   return (
     <Fragment>
       <Head>
-        
+        <title>Home</title>
       </Head>
     </Fragment>
-  )
+  );
 }
 
 export default Home
