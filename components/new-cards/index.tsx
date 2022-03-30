@@ -7,10 +7,10 @@ export default function AddNewCards(props: any){
   const [phone, setPhone] = useState('');
   const [address, setAddress] = useState('');
 
-  const handleInput = async (e) => {
+  const handleInput = async (e: any) => {
     e.preventDefault();
 
-    if (!firstName || !lastName || !email | !phone | !address){
+    if (!firstName || !lastName || !email || !phone || !address){
       alert("All fields are required");
     }  
     return false;
