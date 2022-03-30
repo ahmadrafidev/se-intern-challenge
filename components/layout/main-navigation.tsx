@@ -41,7 +41,7 @@ export default function MainNavigation(props: any) {
   };
 
   return (
-    <header className="px-8 md:px-20 lg:px-48 xl:px-60 2xl:px-96 py-2 sm:py-4 md:py-8 justify-start md:justify-between flex-column sm:flex items-center mx-auto bg-gray-50 dark:bg-primary">
+    <header className="px-8 md:px-20 lg:px-48 xl:px-60 2xl:px-96 py-2 md:py-4 justify-start md:justify-between flex-column sm:flex items-center bg-gray-50 dark:bg-primary">
       <div>
         <Link href="/">
           <a>
@@ -56,10 +56,15 @@ export default function MainNavigation(props: any) {
       </div>
       <div>
         <ul className="flex flex-row justify-end items-center">
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mr-8 flex flex-row items-center">
-            <MdOutlineAdd className="mr-2" />
-            New Card
-          </button>
+          <Link href="/addcard">
+            <a>
+              <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mr-8 flex flex-row items-center">
+                <MdOutlineAdd className="mr-2" />
+                New Card
+              </button>
+            </a>
+          </Link>
+
           <motion.li
             whileHover={{
               scale: 1.2,

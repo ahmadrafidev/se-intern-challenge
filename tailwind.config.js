@@ -131,6 +131,7 @@ module.exports = {
         backgroundColor: ({ theme }) => ({
             ...theme('colors'),
             'primary': '#212121',
+            'secondary': '#2e2e2e',
         }),
         backgroundImage: {
             none: 'none',
