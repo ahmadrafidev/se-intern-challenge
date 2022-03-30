@@ -1,10 +1,9 @@
 import '../styles/globals.css'
-import type { AppProps } from 'next/app'
 import { ThemeProvider } from "next-themes";
 import Head from "next/head";
 import Layout from '../components/layout/layout';
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider enableSystem={true} attribute="class">
       <Layout>

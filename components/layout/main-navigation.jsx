@@ -7,7 +7,7 @@ import Image from "next/image";
 import { MdOutlineAdd } from "react-icons/md";
 
 
-export default function MainNavigation(props: any) {
+export default function MainNavigation() {
 
   const { systemTheme, theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);

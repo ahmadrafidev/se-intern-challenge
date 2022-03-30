@@ -1,4 +1,4 @@
-export default function NotFoundPage(props: any){
+export default function NotFoundPage(){
   return (
     <h1>
       Page Not Found

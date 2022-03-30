@@ -1,13 +1,14 @@
 import {Fragment} from 'react';
 import Head from 'next/head';
-import { NextPage } from "next";
+import HomePage from '../components/home-page/index';
 
-const Home: NextPage = () => {
+const Home = () => {
   return (
     <Fragment>
       <Head>
         <title>Home</title>
       </Head>
+      <HomePage />
     </Fragment>
   );
 }
