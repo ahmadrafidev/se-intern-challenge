@@ -28,7 +28,7 @@ const EditCard = ({ card }) => {
   const updateCard = async () => {
     try {
       const res = await fetch(
-        `http://localhost:3000/api/cards/${router.query.id}`,
+        `/api/cards/${router.query.id}`,
         {
           method: "PUT",
           headers: {
@@ -235,7 +235,10 @@ const EditCard = ({ card }) => {
 };
 
 EditCard.getInitialProps = async ({ query: { id } }) => {
-  const res = await fetch(`http://localhost:3000/api/cards/${id}`);
+  let dev = process.env.NODE_ENV !== "production";
+  let { DEV_URL, PROD_URL } = process.env;
+  
+  const res = await fetch(`${dev ? DEV_URL : PROD_URL}/api/cards/${id}`);
   const { data } = await res.json();
 
   return { card: data };

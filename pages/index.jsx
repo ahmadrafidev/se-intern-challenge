@@ -53,7 +53,10 @@ const HomePage = ({cards}) => {
 };
 
 HomePage.getInitialProps = async() => {
-  const res = await fetch("http://localhost:3000/api/cards");
+  let dev = process.env.NODE_ENV !== "production";
+  let { DEV_URL, PROD_URL } = process.env;
+
+  const res = await fetch(`${dev ? DEV_URL : PROD_URL}/api/cards`);
   const { data } = await res.json();
 
   return { cards: data };

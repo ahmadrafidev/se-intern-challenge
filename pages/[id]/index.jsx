@@ -16,7 +16,7 @@ const DeleteCard = ({ cards }) => {
   const deleteCard = async () => {
     const cardId = router.query.id;
     try {
-      const deleted = await fetch(`http://localhost:3000/api/cards/${cardId}`, {
+      const deleted = await fetch(`/api/cards/${cardId}`, {
         method: "DELETE",
       });
 
@@ -64,7 +64,10 @@ const DeleteCard = ({ cards }) => {
 };
 
 DeleteCard.getInitialProps = async ({ query: { id } }) => {
-  const res = await fetch(`http://localhost:3000/api/cards/${id}`);
+  let dev = process.env.NODE_ENV !== "production";
+  let { DEV_URL, PROD_URL } = process.env;
+
+  const res = await fetch(`${dev ? DEV_URL : PROD_URL}/api/cards/${id}`);
   const { data } = await res.json();
 
   return { cards: data };
