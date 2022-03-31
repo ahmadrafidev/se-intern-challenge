@@ -52,14 +52,18 @@ const HomePage = ({cards}) => {
   );
 };
 
-HomePage.getInitialProps = async() => {
+export async function getServerSideProps(ctx) {
   let dev = process.env.NODE_ENV !== "production";
   let { DEV_URL, PROD_URL } = process.env;
 
   const res = await fetch(`${dev ? DEV_URL : PROD_URL}/api/cards`);
-  const { data } = await res.json();
+  const {data} = await res.json();
 
-  return { cards: data };
+  return { 
+    props: {
+      cards: data,
+    }
+  };
 };
 
 export default HomePage;

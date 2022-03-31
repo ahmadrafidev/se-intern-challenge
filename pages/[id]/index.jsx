@@ -63,14 +63,19 @@ const DeleteCard = ({ cards }) => {
   );
 };
 
-DeleteCard.getInitialProps = async ({ query: { id } }) => {
+
+export async function getServerSideProps({ query: { id } }) {
   let dev = process.env.NODE_ENV !== "production";
   let { DEV_URL, PROD_URL } = process.env;
 
   const res = await fetch(`${dev ? DEV_URL : PROD_URL}/api/cards/${id}`);
   const { data } = await res.json();
 
-  return { cards: data };
+  return { 
+    props: {
+      cards: data,
+    }
+  };
 };
 
 export default DeleteCard;
