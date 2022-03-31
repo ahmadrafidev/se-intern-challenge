@@ -28,7 +28,6 @@ const DeleteCard = ({ cards }) => {
 
   const handleDelete = async () => {
     setIsDeleting(true);
-    close();
   };
 
   return (
