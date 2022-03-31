@@ -1,39 +1,43 @@
+import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import { Spinner } from "@chakra-ui/react";
+import Head from "next/head";
 
-const AddNewCards = () => {
+const EditCard = ({ card }) => {
   const [form, setForm] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: 0,
-    address: '',
+    firstName: card?.firstName,
+    lastName: card?.lastName,
+    email: card?.email,
+    phone: card?.phone,
+    address: card?.address,
   });
-  const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errors, setErrors] = useState({});
   const router = useRouter();
 
   useEffect(() => {
     if (isSubmitting) {
       if (Object.keys(errors).length === 0) {
-        createCard();
+        updateCard();
       } else {
         setIsSubmitting(false);
       }
     }
   }, [errors]);
 
-  const createCard = async () => {
+  const updateCard = async () => {
     try {
-      const res = await fetch("/api/cards", {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(form),
-      });
+      const res = await fetch(
+        `http://localhost:3000/api/cards/${router.query.id}`,
+        {
+          method: "PUT",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(form),
+        }
+      );
       router.push("/");
     } catch (error) {
       console.log(error);
@@ -76,11 +80,13 @@ const AddNewCards = () => {
     return err;
   };
 
-
   return (
     <div className="min-h-screen px-8 md:px-20 lg:px-48 xl:px-60 2xl:px-96 bg-white dark:bg-secondary pt-14">
+      <Head>
+        <title>Edit Card</title>
+      </Head>
       <h1 className="font-serif font-bold text-4xl md:text-5xl flex justify-center mx-20 mb-14">
-        Cards
+        Update Card
       </h1>
       <div className="rounded-lg border border-gray-200 shadow-md p-10 max-w-4xl mx-32">
         <form onSubmit={handleSubmit}>
@@ -220,12 +226,19 @@ const AddNewCards = () => {
             type="submit"
             className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
-            Submit
+            Update
           </button>
         </form>
       </div>
     </div>
   );
-}
+};
 
-export default AddNewCards;
+EditCard.getInitialProps = async ({ query: { id } }) => {
+  const res = await fetch(`http://localhost:3000/api/cards/${id}`);
+  const { data } = await res.json();
+
+  return { card: data };
+};
+
+export default EditCard;

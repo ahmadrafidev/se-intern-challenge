@@ -34,7 +34,7 @@ const DeleteCard = ({ cards }) => {
   return (
     <div className="flex justify-center min-h-screen px-8 md:px-20 lg:px-48 xl:px-60 2xl:px-96 bg-white dark:bg-secondary pt-14ex">
       <Head>
-        <title>View</title>
+        <title>Details Card</title>
       </Head>
 
       <div className="flex flex-col items-center pt-20 tracking-wide text-justify">
@@ -46,7 +46,6 @@ const DeleteCard = ({ cards }) => {
             <h1>{cards?.firstName}</h1>
             <h1>{cards?.lastName}</h1>
           </div>
-
           <h1>{cards?.email}</h1>
           <h1>{cards?.phone}</h1>
           <h1>{cards?.address}</h1>
