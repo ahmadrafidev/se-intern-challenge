@@ -3,7 +3,7 @@ import Card from '../../../models/Card';
 
 dbConnect();
 
-export default async(req, res) => {
+export default async (req, res) => {
     const { method } = req;
 
     switch (method) {
@@ -18,7 +18,7 @@ export default async(req, res) => {
         case 'POST':
             try {
                 const card = await Card.create(req.body);
-                res.status(201).json({ success: true, data: cards });
+                res.status(201).json({ success: true, data: card });
             } catch (error) {
                 res.status(400).json({ success: false });
             }

@@ -97,7 +97,7 @@ const AddNewCards = () => {
               <div className="relative z-0 mb-6 w-full group">
                 <input
                   type="text"
-                  name="first_name_form"
+                  name="firstName"
                   id="first_name_form"
                   className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                   placeholder=" "
@@ -122,7 +122,7 @@ const AddNewCards = () => {
               <div className="relative z-0 mb-6 w-full group">
                 <input
                   type="text"
-                  name="last_name_form"
+                  name="lastName"
                   id="last_name_form"
                   className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                   placeholder=" "
@@ -149,7 +149,7 @@ const AddNewCards = () => {
             <div className="relative z-0 mb-6 w-full group">
               <input
                 type="email"
-                name="email_form"
+                name="email"
                 className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                 placeholder=" "
                 required
@@ -176,7 +176,7 @@ const AddNewCards = () => {
                 <input
                   type="tel"
                   pattern="^08\d{9,10}$"
-                  name="phone_form"
+                  name="phone"
                   id="phone_form"
                   className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                   placeholder=" "
@@ -201,7 +201,7 @@ const AddNewCards = () => {
               <div className="relative z-0 mb-6 w-full group">
                 <input
                   type="text"
-                  name="Address"
+                  name="address"
                   id="Address"
                   className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                   placeholder=" "
