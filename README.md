@@ -1,34 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## About
 
-## Getting Started
+This is a next.js application for Software Engineering Intern position at Synapsis.id
 
-First, run the development server:
+## Running locally in development mode
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+To get started run this application, just clone the repository and run `npm install && npm run dev`:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+    https://github.com/ahmadrafidev/se-intern-challenge
+    npm install
+    npm run dev
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Building and deploying in production
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+If you wanted to run this site in production, you should build the site first with `npm run build` and run it with `npm start`:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+    npm install
+    npm run build
+    npm start
 
-## Learn More
+## Folder Structure
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- components
+  - layout : layout components for next.js app, including footer, main navigation as a navbar, and layout for wrapping
+  - new-cards: react components for adding new cards
+- models: include mongoose schema for card CRUD
+- pages
+  - [id]: next.js pages for deleting the cards and edit cards with different id based on mongoose model
+  - api
+    - cards: API method for CRUD application, include post, get, put, and delete
+  - 404: routing for 404 error
+  - addcard: nextjs page for add new card
+  - index: home page

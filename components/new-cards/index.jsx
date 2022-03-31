@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import { Spinner } from "@chakra-ui/react";
 
 const AddNewCards = () => {
   const [form, setForm] = useState({
@@ -82,7 +81,7 @@ const AddNewCards = () => {
       <h1 className="font-serif font-bold text-4xl md:text-5xl flex justify-center mx-20 mb-14">
         Cards
       </h1>
-      <div className="rounded-lg border border-gray-200 shadow-md p-10 max-w-4xl mx-32">
+      <div className="rounded-lg border border-gray-200 shadow-md p-10 max-w-4xl mx-32 ">
         <form onSubmit={handleSubmit}>
           <div className="grid xl:grid-cols-2 xl:gap-6">
             <div className="relative z-0 mb-6 w-full group">

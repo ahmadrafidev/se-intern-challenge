@@ -88,7 +88,7 @@ const EditCard = ({ card }) => {
       <h1 className="font-serif font-bold text-4xl md:text-5xl flex justify-center mx-20 mb-14">
         Update Card
       </h1>
-      <div className="rounded-lg border border-gray-200 shadow-md p-10 max-w-4xl mx-32">
+      <div className="rounded-lg border border-gray-200 shadow-md p-10 max-w-4xl mx-32 flex-col md:flex-row items-center justify-start py-8">
         <form onSubmit={handleSubmit}>
           <div className="grid xl:grid-cols-2 xl:gap-6">
             <div className="relative z-0 mb-6 w-full group">
